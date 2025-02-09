@@ -7,6 +7,8 @@
 </head>
 <body>
   <script>
+    let results = ();
+
     function getComputerChoice() {
         let computerChoice = Math.random();
         if (computerChoice <= 0.3){
@@ -20,10 +22,33 @@
   
   
     function getHumanChoice() {
-      let humanChoice= prompt('Rock , Paper, Scissors', 'Rock' );
-      } 
+      let humanChoice= prompt('Rock , Paper, Scissors', 'Rock' ).toLowerCase();
+      }
 
-      getComputerChoice();
+    function playgame(getComputerChoice,getHumanChoice) {
+      if(getHumanChoice === getComputerChoice) {
+        console.log('Its a tie');
+      } else if ( (getHumanChoice === 'rock' ) && (getComputerChoice === 'paper')) {
+        console.log('You lose. Paper beats Rock');
+      } else if((getHumanChoice === 'rock') && (getComputerChoice === 'scissors')) {
+        console.log('You win. Rock beats Scissors');
+      }
+
+       else if ( (getHumanChoice === 'paper' ) && (getComputerChoice === 'rock')) {
+        console.log('You win. Paper beats Rock');
+      } else if((getHumanChoice === 'paper') && (getComputerChoice === 'scissors')) {
+        console.log('You lose. Scissors beats Paper');
+      }
+
+    
+        else if ( (getHumanChoice === 'scissors' ) && (getComputerChoice === 'rock')) {
+        console.log('You lose. Rock beats Scissors');
+      } else if((getHumanChoice === 'scissors') && (getComputerChoice === 'paper')) {
+        console.log('You win. paper beats Scissors');
+      }
+    }
+
+
     
     
   </script>   
